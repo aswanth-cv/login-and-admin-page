@@ -1,0 +1,33 @@
+
+<link rel="stylesheet" href="/admin.css">
+
+<header role="banner">
+  <h1>Admin Panel</h1>
+  <ul class="utilities">
+    <br>
+    <li class="users"><a href="#">Welcome, <%= admin.name %></a></li>
+    <li class="logout warn"><a href="/admin/logout">Log Out</a></li>
+  </ul>
+</header>
+
+<nav role='navigation'>
+  <ul class="main">
+    <li class="dashboard"><a href="/admin/dashboard">Dashboard</a></li>
+  </ul>
+</nav>
+
+<main role="main">
+  <section class="panel important">
+    <h2>Admin Details</h2>
+    <table style="width: 50%; margin-top: 10px;">
+      <tr>
+        <td><strong>Name:</strong></td>
+        <td><%= admin.name %></td>
+      </tr>
+      <tr>
+        <td><strong>Email:</strong></td>
+        <td><%= admin.email %></td>
+      </tr>
+    </table>
+  </section>
+</main>

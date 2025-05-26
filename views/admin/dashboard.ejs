@@ -1,0 +1,38 @@
+
+<link rel="stylesheet" href="/dashboard.css">
+
+<h1>Admin Dashboard</h1>
+<a href="/admin/new-user" class="btn-add-user">Add New User</a>
+
+<% if (users && users.length > 0) { %>
+  <table id="user-table" class="table dt-responsive nowrap" style="width:100%">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Verified</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% users.forEach(user => { %>
+        <tr>
+          <td><%= user.name %></td>
+          <td><%= user.email %></td>
+          <td><%= user.is_verified ? 'Yes' : 'No' %></td>
+          <td>
+            <a href="/admin/edit-user?id=<%= user.id %>" class="action-edit">Edit</a> |
+            <a href="/admin/delete-user?id=<%= user.id %>" class="action-delete" onclick="return confirm('Are you sure you want to delete this user?');">Delete</a>
+          </td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+<% } else { %>
+  <p>No users found.</p>
+<% } %>
+
+<br>
+<a href="/admin/home" class="btn-home">Go to Home</a>
+
+<script src="/dashboard.js"></script>

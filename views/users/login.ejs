@@ -1,0 +1,30 @@
+
+<link rel="stylesheet" href="/style.css">
+
+<section class="container">
+  <div class="login-container">
+    <div class="circle circle-one"></div>
+
+    <div class="form-container">
+      <h1 class="opacity">LOGIN</h1>
+
+      <% if (typeof message !== 'undefined') { %>
+        <h4 class="opacity"><%= message %></h4>
+      <% } %>
+
+      <form action="/login" method="post">
+        <input type="email" name="email" placeholder="EMAIL" required />
+        <input type="password" name="password" placeholder="PASSWORD" required />
+        <button class="opacity" type="submit">SUBMIT</button>
+      </form>
+
+      <div class="register-forget opacity">
+        <a href="/register">REGISTER</a>
+        <a href="/forget">FORGOT PASSWORD</a>
+      </div>
+    </div>
+
+    <div class="circle circle-two"></div>
+  </div>
+  <div class="theme-btn-container"></div>
+</section>

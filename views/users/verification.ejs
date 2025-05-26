@@ -1,0 +1,19 @@
+
+<h1>verification</h1>
+
+
+<%      
+   if(typeof message !=='undefined' ){
+   %>
+   <h4><%=message %></h4>
+   <%
+   }
+
+%>
+<form action="v" method="post">
+
+
+<input type="email" name="email" placeholder="Enter email" required>
+<br><br>
+<input type="submit" value="verification Link "">
+</form>
